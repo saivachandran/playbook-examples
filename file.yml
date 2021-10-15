@@ -1,0 +1,7 @@
+---
+ - hosts: cloud
+   tasks:
+     - name: change file permission
+       file: dest=/root/install_apache.yml owner=ubuntu group=ubuntu mode=400 
+...       
+        

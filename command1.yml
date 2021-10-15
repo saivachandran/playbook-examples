@@ -1,0 +1,9 @@
+---
+- name: check the remote hosname and details
+  hosts: cloud
+  tasks:
+  - name:  execute uname command over command module
+    command: "uname -a"
+    register: _result
+  - debug:
+      var: _result

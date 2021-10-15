@@ -1,0 +1,8 @@
+---
+ - hosts: cloud
+   tasks:
+     - name: copy file from remote to host      
+       fetch:
+         src: /root/install_apache.yml
+         dest: /home/ubuntu/
+...         

@@ -1,0 +1,7 @@
+---
+ - hosts: cloud
+   tasks:
+     - setup:
+         filter: ansible_os_family 
+...             
+

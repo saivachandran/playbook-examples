@@ -1,0 +1,11 @@
+---
+- name: check remote server uptime
+  hosts: cloud
+  tasks:
+  - name: execute uptime command over command module
+    register: uptimeoutput
+    command: "uptime"
+
+  - debug:
+      var: uptimeoutput
+...  

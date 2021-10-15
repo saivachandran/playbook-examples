@@ -1,0 +1,9 @@
+---
+- hosts: cloud
+  tasks:
+  - name:
+    lineinfile:
+      path: /home/ubuntu/apache2.conf
+      regexp: 'KeepAliveTimeout'
+      line: 'KeepAliveTimeout 10'
+...      

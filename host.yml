@@ -1,0 +1,13 @@
+---
+- hosts: cloud
+  gather_facts: yes
+  tasks:
+  - name: collect remote system data       
+    debug:     
+      msg: system {{ ansible_eth0 }}
+  - template:
+          src: ./hostname.j2
+          dest: /tmp/hostname.txt    
+    delegate_to: localhost
+            
+...

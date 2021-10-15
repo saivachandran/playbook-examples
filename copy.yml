@@ -1,0 +1,8 @@
+---
+ - hosts: cloud
+   tasks:
+     - name: copy file from host to remote
+       copy: src=/home/ubuntu/play_examples/install_apache.yml dest=/root/ owner=root group=root mode=644 
+
+
+...       

@@ -1,0 +1,35 @@
+---   
+  - hosts: local 
+    vars:
+       mysql_root_password: Daksha
+    tasks:   
+     - name: install mysql     
+       #apt: name=mysql update_cache=yes cache_valid_time=3600 state=present
+       action: apt pkg={{ item }} state=present
+       with_items:
+         - mysql-server
+         - mysql-client
+         - php-mysql
+         - python3-mysqldb      
+         - python3-pymysql  
+ 
+     - name: start up the mysql service  
+       shell: "service mysql start"  
+     - name: ensure mysql is enabled to run on startup  
+       service: name=mysql state=started enabled=true
+
+ 
+
+
+     - name: update mysql root password for root account
+       mysql_user:
+         name: root
+         login_unix_socket: /var/run/mysqld/mysqld.sock
+         host: 'localhost'
+         password: '{{ mysql_root_password }}'
+         priv: "*.*:ALL,GRANT"
+         check_implicit_admin: true
+   
+
+  
+      

@@ -1,0 +1,13 @@
+---
+ - hosts: cloud
+   tasks:
+     - name:  create user in remote machine
+       user:
+         name: sai
+         comment: saivachandran
+         shell: /bin/bash
+         uid: 1200
+         group: root
+         state: absent
+         remove: yes
+...                

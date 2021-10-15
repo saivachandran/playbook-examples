@@ -1,0 +1,11 @@
+{% for i,j in   .ansible_distribution.tems() %}
+{% if i == 'distribution' %}
+{% for b,c in j.items() %}
+{{ b.ljust(10)  }} - {{c}}
+{% endfor %}
+{% else %}  
+{{ i.ljust(10) }} - {{ j}}
+{% endif %}
+{% endfor %}
+
+

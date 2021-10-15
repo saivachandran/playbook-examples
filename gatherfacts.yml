@@ -1,0 +1,7 @@
+---
+- hosts: cloud
+  gather_facts: yes
+  tasks:
+    - debug: var=ansible_date_time
+      register: date_time
+    - local_action: "copy content='{{ date_time }}' dest=/home/ubuntu/play_examples/data1.txt"

@@ -1,0 +1,11 @@
+{% for i,j in   ansible_eth0.items() %}
+{% if i == 'ipv4' %}
+{% for b,c in j.items() %}
+{{ b.ljust(10)  }} - {{c}}
+{% endfor %}
+{% else %}  
+{{ i.ljust(10) }} - {{ j}}
+{% endif %}
+{% endfor %}
+
+

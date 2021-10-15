@@ -1,0 +1,16 @@
+---
+ - hosts: cloud
+   tasks:
+     - name: touch multiple files in remote host
+       file:
+         path: "{{item}}" 
+         state: absent
+         mode: '644'
+         owner: ubuntu
+         group: ubuntu
+       with_items:
+               - sai1.txt
+               - sai2.txt
+               - sai3.txt
+...                 
+

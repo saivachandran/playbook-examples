@@ -1,0 +1,13 @@
+---
+ - hosts: cloud
+   gather_facts: False
+   tasks:
+     - name:  installing packages
+       apt:
+         name: "{{ item }}"
+         update_cache: yes
+       with_items:
+       - git
+       - memcached
+       - nginx
+...         

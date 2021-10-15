@@ -1,0 +1,10 @@
+---
+- hosts: cloud
+  tasks:
+  - name: change apache2 configuration
+    lineinfile:
+      dest: /home/ubuntu/apache2.conf
+      line: KeepAliveTimeout 5
+      insertafter: 'KeepAliveTimeout 10'
+
+... 
